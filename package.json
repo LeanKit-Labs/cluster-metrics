@@ -1,0 +1,24 @@
+{
+  "name": "cluster-metrics",
+  "version": "0.0.2",
+  "description": "A very simple way to centralize metrics collected in a node cluster",
+  "main": "src/index.js",
+  "dependencies": {
+    "lodash": "~2.4.1",
+    "metrics": "~0.1.8",
+    "moment": "~2.6.0",
+    "postal": "~0.9.0-rc1"
+  },
+  "devDependencies": {
+    "gulp": "~3.6.1",
+    "gulp-mocha": "~0.4.1",
+    "processhost": "~0.1.9"
+  },
+  "scripts": {
+  },
+  "keywords": [
+    "metrics"
+  ],
+  "author": "Alex Robson",
+  "license": "MIT License - http://opensource.org/licenses/MIT"
+}

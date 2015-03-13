@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "dependencies": {
     "lodash": "~2.4.1",
-    "metrics": "~0.1.8",
+    "metrics": "~0.1.9",
     "moment": "~2.6.0",
     "postal": "~1.0.1"
   },

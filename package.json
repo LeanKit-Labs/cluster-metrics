@@ -7,7 +7,7 @@
     "lodash": "~2.4.1",
     "metrics": "~0.1.9",
     "postal": "~1.0.1"
-  },,
+  },
   "devDependencies": {
     "gulp": "~3.6.1",
     "gulp-mocha": "~0.4.1",

@@ -36,13 +36,12 @@ var Api = function( send ) {
 		};
 
 	Timer.prototype.start = function() {
-		this.last = moment.utc();
+		this.last = Date.now();
 	};
 
 	Timer.prototype.record = function( val ) {
 		if( !val && this.last ) {
-			var now = moment.utc();
-			val = ( now.diff( this.last, 'ms' ) / 1000 );
+			val = Date.now() - this.last;
 		}
 		if( val ) {
 			send( 'dur.Timer', { name: this.name, val: val } );

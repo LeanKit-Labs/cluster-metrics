@@ -1,5 +1,4 @@
 var cluster = require( 'cluster' ),
-	moment = require( 'moment' ),
 	_ = require( 'lodash' );
 
 

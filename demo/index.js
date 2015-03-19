@@ -4,7 +4,7 @@ var cluster = require( 'cluster' ),
 if( cluster.isMaster ) {
 	setTimeout( function() {
 		metrics.getMetrics( function( summary ) {
-			console.log( summary );
+			console.log( JSON.stringify(summary, null, 2) );
 		} );
 		process.exit();
 	}, 5000 );

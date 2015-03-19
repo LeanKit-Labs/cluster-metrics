@@ -55,13 +55,12 @@ var MB = 1024 * 1024,
 		report = new Metrics.Report();
 		cluster.on( 'online', function( worker ) {
 			worker.on( 'message', function( data ) {
-				var json = JSON.parse( data.toString() );
-				if( json.type == 'report' ) {
-					worker.send( JSON.stringify( { type: 'report', report: report.summary() } ) );
-				} else if ( json.type == 'memory' ) {
-					memoryList[ worker.id ] = json.message;
+				if( data.type == 'report' ) {
+					worker.send( { type: 'report', report: report.summary() } );
+				} else if ( data.type == 'memory' ) {
+					memoryList[ worker.id ] = data.message;
 				} else {
-					commands.publish( json.type, json.message );
+					commands.publish( data.type, data.message );
 				}
 			} );
 		} );

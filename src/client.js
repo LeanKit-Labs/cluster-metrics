@@ -6,11 +6,10 @@ var MB = 1024 * 1024,
 	client = function() {
 		var waiting = [],
 			send = function( type, message ) {
-				process.send( JSON.stringify( { type: type, message: message } ) );
+				process.send(  { type: type, message: message } ) ;
 			};
 
-		process.on( 'message', function( message ) {
-			var metrics = JSON.parse( message );
+		process.on( 'message', function( metrics ) {
 			_.each( waiting, function( callback ) {
 				callback( metrics );
 			} );

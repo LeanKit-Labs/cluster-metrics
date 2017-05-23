@@ -63,7 +63,10 @@ var MB = 1024 * 1024,
 				delete data.clustermetrics;
 
 				if( data.type == 'report' ) {
-					worker.send( { clustermetrics: true, type: 'report', report: report.summary() } );
+					report.getMetrics(function(metrics) {
+						var data = _.merge( metrics, report.summary() );
+						worker.send( { clustermetrics: true, type: 'report', report: data } );
+					});
 				} else if ( data.type == 'memory' ) {
 					memoryList[ worker.id ] = data.message;
 				} else {

@@ -18,7 +18,7 @@ var MB = 1024 * 1024,
 			delete metrics.clustermetrics;
 
 			_.each( waiting, function( callback ) {
-				callback( metrics );
+				callback( metrics.report );
 			} );
 			waiting = [];
 		} );

@@ -6,10 +6,17 @@ var MB = 1024 * 1024,
 	client = function() {
 		var waiting = [],
 			send = function( type, message ) {
-				process.send(  { type: type, message: message } ) ;
+				process.send(  { clustermetrics: true, type: type, message: message } ) ;
 			};
 
 		process.on( 'message', function( metrics ) {
+			// ensure this message is for us
+			if ( !metrics.clustermetrics ) {
+				return;
+			}
+
+			delete metrics.clustermetrics;
+
 			_.each( waiting, function( callback ) {
 				callback( metrics );
 			} );

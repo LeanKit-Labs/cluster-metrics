@@ -19,5 +19,12 @@
     "metrics"
   ],
   "author": "Alex Robson",
-  "license": "MIT License - http://opensource.org/licenses/MIT"
+  "license": "MIT License - http://opensource.org/licenses/MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LeanKit-Labs/cluster-metrics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LeanKit-Labs/cluster-metrics/issues"
+  }
 }

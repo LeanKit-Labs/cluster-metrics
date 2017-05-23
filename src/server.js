@@ -8,8 +8,8 @@ var Metrics = require( 'metrics' ),
 	report;
 
 var createMetric = function( type, name ) {
-	var metric = report.getMetric( name ); 
-		if( !metric ) { 
+	var metric = report.getMetric( name );
+		if( !metric ) {
 			metric = new Metrics[ type ]();
 			report.addMetric( name, metric );
 		}
@@ -55,8 +55,15 @@ var MB = 1024 * 1024,
 		report = new Metrics.Report();
 		cluster.on( 'online', function( worker ) {
 			worker.on( 'message', function( data ) {
+				// ensure this message is for us
+				if ( !data.clustermetrics ) {
+					return;
+				}
+
+				delete data.clustermetrics;
+
 				if( data.type == 'report' ) {
-					worker.send( { type: 'report', report: report.summary() } );
+					worker.send( { clustermetrics: true, type: 'report', report: report.summary() } );
 				} else if ( data.type == 'memory' ) {
 					memoryList[ worker.id ] = data.message;
 				} else {
@@ -80,7 +87,7 @@ var MB = 1024 * 1024,
 				};
 
 			metrics.memoryUtilization = {};
-			_.each( _.values( memoryList ), 
+			_.each( _.values( memoryList ),
 				function( subtotals ) {
 					_.reduce( subtotals, function( result, num, key ) {
 						result[ key ] = ( result[ key ] || 0 ) + num;

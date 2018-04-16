@@ -4,7 +4,7 @@
   "description": "A very simple way to centralize metrics collected in a node cluster",
   "main": "src/index.js",
   "dependencies": {
-    "lodash": "~2.4.1",
+    "lodash": "^4.17.5",
     "metrics": "~0.1.9",
     "postal": "~1.0.1"
   },
@@ -13,8 +13,7 @@
     "gulp-mocha": "~0.4.1",
     "processhost": "~0.1.9"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [
     "metrics"
   ],

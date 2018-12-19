@@ -1,5 +1,5 @@
 {
-  "name": "cluster-metrics",
+  "name": "cluster-metrics2",
   "version": "0.0.2",
   "description": "A very simple way to centralize metrics collected in a node cluster",
   "main": "src/index.js",
@@ -21,9 +21,9 @@
   "license": "MIT License - http://opensource.org/licenses/MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/LeanKit-Labs/cluster-metrics.git"
+    "url": "https://github.com/nicjansma/cluster-metrics2.git"
   },
   "bugs": {
-    "url": "https://github.com/LeanKit-Labs/cluster-metrics/issues"
+    "url": "https://github.com/nicjansma/cluster-metrics2/issues"
   }
 }

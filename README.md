@@ -1,4 +1,7 @@
-# cluster-metrics
+# cluster-metrics2
+
+(forked from [LeanKit-Labs' `cluster-metrics`](https://github.com/LeanKit-Labs/cluster-metrics), which appears no longer maintained)
+
 It's fun to put 'cluster' in front of things. It's also fun when you can aggregate all your metrics in a cluster into a single metrics report.
 
 This lib provides a uniform api between workers and a main process within a Node cluster for collecting metrics. Collection is done via the [metrics lib in use at Yammer](https://github.com/mikejihbe/metrics), a clone of Coda's Java Metrics library.
@@ -8,7 +11,7 @@ Fwiw - you may not WANT this behavior, in which case, simply use the metrics lib
 ## Use
 No matter if you're on master or a worker, simply require it and go:
 ```javascript
-var metrics = require( 'cluster-metrics' );
+var metrics = require( 'cluster-metrics2' );
 ```
 
 ## API
